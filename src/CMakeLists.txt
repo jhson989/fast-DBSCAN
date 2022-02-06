@@ -3,6 +3,7 @@ set (INSTALL_PATH /home/jhson/lib/)
 set (
     CPP_FILES
     ${PKG_NAME}.cpp
+    sequential.cpp
 )
 
 set (

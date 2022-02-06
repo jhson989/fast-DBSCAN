@@ -7,7 +7,7 @@ import numpy as np
 
 W, H = 800, 600
 
-def points_to_image(points, name="a.png"):
+def points_to_image(points, name):
     data = np.zeros((H, W), dtype=np.uint8)
 
     for point in points:
@@ -16,7 +16,7 @@ def points_to_image(points, name="a.png"):
     img = Image.fromarray(data)
     img.save(name)
 
-def paint_to_image(points, labels, name="a.png"):
+def paint_to_image(points, labels, name):
 
     label_min = min(labels)
     label_max = max(labels)+1
@@ -65,6 +65,6 @@ if __name__ == "__main__":
     make_example(points)
     
     points_to_image(points, "example.png")
-    labels = fastDBSCAN.run(points, 5, 20)
+    labels = fastDBSCAN.run(points, 3, 100)
     paint_to_image(points, labels, "result.png")
     
