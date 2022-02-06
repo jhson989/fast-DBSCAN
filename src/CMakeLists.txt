@@ -1,3 +1,5 @@
+set (INSTALL_PATH /home/jhson/lib/)
+
 set (
     CPP_FILES
     ${PKG_NAME}.cpp
@@ -29,5 +31,5 @@ add_custom_target(
 
 install(
     TARGETS ${PKG_NAME} 
-    LIBRARY DESTINATION /home/jhson/lib/
+    LIBRARY DESTINATION ${INSTALL_PATH}
     )

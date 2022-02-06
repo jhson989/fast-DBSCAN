@@ -18,10 +18,11 @@ def points_to_image(points, name="a.png"):
 
 def paint_to_image(points, labels, name="a.png"):
 
-    label_min = min(labels)
+    label_min = min(labels)+1
     label_max = max(labels)+1
 
-    color = [[random.randint(0, 10)*25, random.randint(0, 10)*25, random.randint(0, 10)*25] for i in range(label_min, label_max)]
+    
+    color = [[255, 255, 255]] + [[random.randint(0, 10)*25, random.randint(0, 10)*25, random.randint(0, 10)*25] for i in range(label_min, label_max)]
 
 
     data = np.zeros((H, W, 3), dtype=np.uint8)
