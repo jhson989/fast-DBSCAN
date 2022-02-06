@@ -1,11 +1,11 @@
 set (
     CPP_FILES
-    FastDBSCAN.cpp
+    fastDBSCAN.cpp
 )
 
 set (
     CYTHON_FILE 
-    FastDBSCAN.pyx
+    fastDBSCAN.pyx
 )
 
 add_library(FastDBSCAN SHARED ${CPP_FILES})
