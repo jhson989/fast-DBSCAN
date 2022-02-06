@@ -7,7 +7,8 @@ ext_modules = [
               sources=["fastDBSCAN.pyx"],
               libraries=["fastDBSCAN"],
               library_dirs=[ str(pathlib.Path().resolve()) ],
-              include_dirs=[ str(pathlib.Path().resolve())+"/../../include/" ]
+              include_dirs=[ str(pathlib.Path().resolve())+"/../../include/" ],
+              language="c++",
               )
 ]
 
