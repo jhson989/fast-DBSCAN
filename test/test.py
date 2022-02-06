@@ -16,6 +16,23 @@ def points_to_image(points, name="a.png"):
     img = Image.fromarray(data)
     img.save(name)
 
+def paint_to_image(points, labels, name="a.png"):
+
+    label_min = min(labels)
+    label_max = max(labels)+1
+
+    color = [[random.randint(0, 10)*25, random.randint(0, 10)*25, random.randint(0, 10)*25] for i in range(label_min, label_max)]
+
+
+    data = np.zeros((H, W, 3), dtype=np.uint8)
+
+    for i, point in enumerate(points):
+        data[round(point[0])][round(point[1])] = color[labels[i]]
+
+    img = Image.fromarray(data)
+    img.save(name)
+
+
 def make_example(points):
 
     NUM_CENTORS = 100 + random.randint(0, 10)
@@ -41,14 +58,12 @@ def make_example(points):
 
 
 
-
-
 if __name__ == "__main__":
 
     points = []
     make_example(points)
     
     points_to_image(points, "example.png")
-    points = fastDBSCAN.run(points)
-    points_to_image(points, "result.png")
+    labels = fastDBSCAN.run(points)
+    paint_to_image(points, labels, "result.png")
     
