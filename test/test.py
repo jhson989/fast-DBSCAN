@@ -18,7 +18,7 @@ def points_to_image(points, name="a.png"):
 
 def paint_to_image(points, labels, name="a.png"):
 
-    label_min = min(labels)+1
+    label_min = min(labels)
     label_max = max(labels)+1
 
     
@@ -65,6 +65,6 @@ if __name__ == "__main__":
     make_example(points)
     
     points_to_image(points, "example.png")
-    labels = fastDBSCAN.run(points)
+    labels = fastDBSCAN.run(points, 5, 20)
     paint_to_image(points, labels, "result.png")
     

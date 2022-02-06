@@ -9,8 +9,8 @@ cdef extern from "fastDBSCAN.hpp":
 cdef points_to_array(double * data, points, num_points):
     cdef int i
     for i in range(num_points):
-        data[2*i] = points[i][0]
-        data[2*i+1] = points[i][1]
+        data[2*i] = points[i][0] #y
+        data[2*i+1] = points[i][1] #x
 
 
 def run(points, eps=0.3, min_samples=6):
