@@ -65,6 +65,6 @@ if __name__ == "__main__":
     make_example(points)
     
     points_to_image(points, "example.png")
-    labels = fastDBSCAN.run(points, 3, 100)
+    labels = fastDBSCAN.run(points, 2.5, 8)
     paint_to_image(points, labels, "result.png")
     
