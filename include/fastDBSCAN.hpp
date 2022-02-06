@@ -1,3 +1,3 @@
 #pragma once
 
-double fastDBSCAN(double, double);
+void fastDBSCAN(double*, size_t, double, double);
