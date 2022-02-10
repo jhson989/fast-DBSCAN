@@ -1,7 +1,7 @@
 ﻿# fast-DBSCAN
 
 ## 1. Introduction
-Cython package for DBSCAN[1] accelerated via SYCL
+Cython package for accelerated DBSCAN[1]
 ![alt text](https://github.com/jhson989/fast-DBSCAN/blob/master/images/demo.png?raw=true)
 
 ## 2. How to Run
